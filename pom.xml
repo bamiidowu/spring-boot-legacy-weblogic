@@ -3,27 +3,26 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.boostrdev</groupId>
+    <groupId>com.boostrdev.legacy.weblogic</groupId>
     <artifactId>spring-boot-legacy-weblogic</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>spring-boot-legacy-weblogic</name>
+    <name>Spring Boot Legacy WebLogic</name>
     <description>Demo project for deploying a Spring Boot to a legacy weblogic environment using servlet 2.5</description>
+
+    <properties>
+        <!-- Overrides the spring.version in the parent pom -->
+        <spring.version>4.2.5.RELEASE</spring.version>
+        <spring.boot.version>1.1.12.RELEASE</spring.boot.version>
+    </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
+        <!-- Using version 1.1.12 for Java SE 6 compatibility -->
         <version>1.1.12.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.6</java.version>
-        <spring.version>4.2.5.RELEASE</spring.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -44,6 +43,13 @@
         </dependency>
 
         <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -58,6 +64,7 @@
 
     <build>
         <plugins>
+            <!--Copy the static web resources to the webapp directory for weblogic deployment-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -87,6 +94,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
                 <configuration>
                     <classifier>BOOT</classifier>
                 </configuration>
