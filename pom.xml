@@ -9,7 +9,7 @@
     <packaging>war</packaging>
 
     <name>Spring Boot Legacy WebLogic</name>
-    <description>Demo project for deploying a Spring Boot to a legacy weblogic environment using servlet 2.5</description>
+    <description>Demo project for deploying a Spring Boot to a legacy (10.3.5) weblogic environment using servlet 2.5</description>
 
     <properties>
         <!-- Overrides the spring.version in the parent pom -->
