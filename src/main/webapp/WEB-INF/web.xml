@@ -5,7 +5,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>com.boostrdev.SpringBootWeblogicLegacyApplication</param-value>
+        <param-value>com.boostrdev.weblogic.legacy.SpringBootWebLogicLegacyApplication</param-value>
     </context-param>
 
     <listener>
