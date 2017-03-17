@@ -1,7 +1,7 @@
 # spring-boot-legacy-weblogic
 An example of a spring boot application that can be deployed to a legacy WebLogic server (11g and below) which uses servlet 2.5 api
 
-## Compatibility
+## Dependencies
 
 - __spring-boot-starter-parent__: Using version 1.1.12 for Java SE 6 compatibility 1.1.12.RELEASE
 - __servlet-api__: Using version 2.5 supported by legacy WebLogic servers 11g and below
