@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.WebApplicationInitializer;
 
@@ -14,6 +15,7 @@ import org.springframework.web.WebApplicationInitializer;
 // application
 @Configuration
 // SpringBootWebLogicLegacyApplication is a SpringBootServletInitializer subclass and override its configure method.
+@ComponentScan
 public class SpringBootWebLogicLegacyApplication extends SpringBootServletInitializer implements WebApplicationInitializer {
 
 	// Tell Spring to launch our app!
